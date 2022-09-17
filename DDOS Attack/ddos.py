@@ -3,7 +3,7 @@ import socket
 
 
 #need to know the inside ip of my router, default gateway
-target_ip = 'gateway_ip'
+target_ip = '202.0.94.5'
 #we can choose which service to put down,
 # port number 80 puts down the http service
 port = 80
