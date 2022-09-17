@@ -1,17 +1,18 @@
 import socket
 
-HOST = '192.168.199.1'
-PORT = 9999
+# better to use the wireless LAN adapter Wi-Fi IP
+# this is your device ip address
+HOST = "192.168.199.1"
 
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+PORT = 12344
 
-client.connect((HOST, PORT))
+# making a client socket and defining the type of socket and the type of data receiving
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-client.send('Hello World!....'.encode('utf-8'))
-client.send('Hello World!....'.encode('utf-8'))
-client.send('Hello World!....'.encode('utf-8'))
-message = client.recv(1024).decode('utf-8')
+client.connect((HOST,PORT))
+number = '12'
 
-print(f'message received from the server was {message}')
+client.send(number.encode(('utf-8')))
 
-client.close()
+# print whatever you receive form the server
+print(client.recv(1024).decode('utf-8'))
